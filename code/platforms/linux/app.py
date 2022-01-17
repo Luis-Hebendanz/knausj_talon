@@ -36,3 +36,4 @@ class AppActions:
         #requires easy window switcher or equivalent (built into most Linux)
     def window_previous():
         actions.key('alt-shift-`')
+

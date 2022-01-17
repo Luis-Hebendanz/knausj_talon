@@ -13,6 +13,10 @@ run last: user.terminal_run_last()
 rerun [<user.text>]: user.terminal_rerun_search(text or "")
 rerun search: user.terminal_rerun_search("")
 kill all: user.terminal_kill_all()
+search file [<user.text>]: user.search_file(text or "")
+search string [<user.text>]: user.search_string(text or "")
+search history [<user.text>]: user.search_history(text or "")
+edit [<user.text>]: user.edit(text or "")
 
 copy paste:
     edit.copy()

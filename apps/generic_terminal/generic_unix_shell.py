@@ -1,5 +1,6 @@
 from talon import app, Module, Context, actions, ui, imgui, settings, app, registry
 
+
 ctx = Context()
 mod = Module()
 ctx.matches = r"""
@@ -14,7 +15,7 @@ class Actions:
         """Lists directories"""
         actions.insert("ls")
         actions.key("enter")
-        
+
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
         actions.insert("ls -a")
@@ -30,6 +31,26 @@ class Actions:
         """Root of current drive"""
         actions.insert("cd /")
         actions.key("enter")
+
+    def search_history(data: str):
+        """Searches through the previously executed commands"""
+        actions.insert(f"$(cat $HISTFILE | sed 's/.*;//g'  | fzf)")
+        actions.key("enter")
+        actions.insert(data)
+
+    def edit(data: str):
+        """Opens the code editor"""
+        actions.insert(f"$EDITOR {data}")
+
+    def search_file(path: str):
+        """Searches for a file"""
+        actions.insert("fd {}".format(path))
+
+
+    def search_string(data: str):
+        """Searches for a file"""
+        actions.insert("ag \"{}\"".format(data))
+
 
     def terminal_clear_screen():
         """Clear screen"""

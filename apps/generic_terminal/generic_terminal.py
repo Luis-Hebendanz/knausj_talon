@@ -6,9 +6,15 @@ mod = Module()
 class Actions:
     # implements the function from generic_terminal.talon for unix shells
 
+    def search_file(path: str):
+        """Searches for a file"""
+
+    def search_string(data: str):
+        """Searches for a string"""
+
     def terminal_list_directories():
         """Lists directories"""
-        
+
     def terminal_list_all_directories():
         """Lists all directories including hidden"""
 
@@ -29,3 +35,9 @@ class Actions:
 
     def terminal_kill_all():
         """kills the running command"""
+
+    def search_history(data: str):
+        """Searches through the previously executed commands"""
+
+    def edit(data: str):
+        """Opens the code editor"""
